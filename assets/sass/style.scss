@@ -1,0 +1,36 @@
+//@import "bootstrap__imports";
+@import "../sass/variaveis_cores";
+@import "../sass/mixins"; //MIXINS
+// UTILIDADES
+@import "../sass/utilities/utilitarios";
+@import "../sass/utilities/responsivo";
+@import "../sass/utilities/reset";
+@import "../sass/utilities/animation";
+
+
+//components
+@import "../sass/components/body"; //BODY
+@import "../sass/components/menu";
+@import "../sass/components/footer";
+
+// PÁGINAS
+main {
+    overflow: hidden;
+}
+
+
+
+.body__home {
+    @import "./pages/page_home";
+}
+
+
+.body__trabalhos {
+    @import "./pages/page_trabalhos";
+}
+
+
+.body__sobre {
+    @import "./pages/page_sobre";
+}
+

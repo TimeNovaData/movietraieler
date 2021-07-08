@@ -1,0 +1,145 @@
+// @import "../components/secao-contato.scss";
+@mixin img_cover_absolute {
+  @include size(100%); //100% tamanho
+  @include inset; //centraliza
+  position: absolute;
+  object-fit: cover;
+}
+
+.intro__trabalhos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: rem(160);
+  margin-bottom: rem(64);
+
+  @include d(s) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  @include titulo-secao;
+  @include ver-todos;
+}
+
+& {
+  background-color: $cor-branco-bg;
+}
+
+.trabalhos__wrapper {
+  .trabalhos__item {
+    picture {
+      img {
+        object-fit: cover;
+        border-radius: 16px;
+        box-shadow: 0px 12px 24px 6px rgba(25, 76, 255, 0.16),
+          0px 24px 48px 6px rgba(0, 0, 0, 0.16);
+      }
+    }
+  }
+}
+
+// CLIENTES
+
+.clientes {
+  margin-top: rem(160);
+  margin-bottom: rem(40);
+
+  .intro__clientes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: rem(64);
+
+    @include d(s) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    @include titulo-secao;
+    @include ver-todos;
+  }
+
+  .clientes__wrapper {
+    .clientes__item {
+      picture {
+        img {
+          object-fit: cover;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+}
+
+// DEPOIMENTOS
+
+.depoimentos {
+  margin-top: rem(160);
+  margin-bottom: rem(160);
+
+  h2 {
+    font-size: rem(40);
+    font-weight: 700;
+    margin-bottom: rem(40);
+    text-align: center;
+  }
+
+  .depoimentos__item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0 auto;
+    padding: rem(30);
+    box-shadow: 0px 12px 24px rgba(236, 21, 21, 0.12);
+    border-radius: 16px;
+
+    @include d(s) {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+
+    .depo__text {
+      display: flex;
+      margin: 0 auto;
+      flex-direction: column;
+      position: relative;
+
+      p {
+        font-size: rem(16);
+        font-style: italic;
+        padding-left: 60px;
+        color: $cor-preto-3;
+        padding-bottom: rem(24);
+        line-height: 1.4rem;
+      }
+
+      span {
+        display: block;
+        padding-left: 60px;
+        font-size: rem(22);
+        font-weight: 700;
+        padding-top: rem(22);
+
+      }
+
+      .ornaquote1,
+      .ornaquote2 {
+        width: 30px;
+      }
+
+      .ornaquote1 {
+        position: absolute;
+        top: 0px;
+        left: 0;
+      }
+
+      .ornaquote2 {
+        position: absolute;
+        bottom: 10px;
+        right: 0;
+      }
+    }
+  }
+}

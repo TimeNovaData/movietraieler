@@ -1,0 +1,12 @@
+.menus {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+
+    .logo img {
+        @include d(m) {
+            width: 140px;
+        }
+    }
+}
