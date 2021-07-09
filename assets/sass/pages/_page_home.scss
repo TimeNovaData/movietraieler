@@ -154,6 +154,7 @@
   .carousel__imagens {
     position: absolute;
     @include size(100%);
+    z-index: -1;
 
     img {
       object-fit: cover;
@@ -169,6 +170,11 @@
 
   .titulo {
     height: 100%;
+    transform: translateX(10vw);
+
+    @include d(s) {
+      transform: translateX(0);
+    }
 
     &__container {
       height: 100%;
@@ -251,7 +257,8 @@
       .outline {
         -webkit-text-stroke: 2px rgba(255, 255, 255, 0.4);
         color: transparent;
-        @include d(s){
+
+        @include d(s) {
           -webkit-text-stroke: 1px rgba(255, 255, 255, 0.4);
         }
       }
@@ -263,7 +270,8 @@
 
 
   .titulo__trailer {
-    color: #EC1515;
+    color: transparent;
+    -webkit-text-stroke: 2px #EC1515;
     position: absolute;
     top: 0;
     bottom: 0;

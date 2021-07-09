@@ -324,10 +324,7 @@
             spaceBetween: 0,
             centeredSlides: false,
             preloadImages: true,
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
+           
 
 
         })
@@ -344,7 +341,7 @@
             spaceBetween: 10,
             centeredSlides: true,
             direction: "vertical",
-            // grabCursor: true,
+            grabCursor: true,
             speed: 600,
             initialSlide: 2,
             // mousewheelControl: true,
@@ -356,6 +353,10 @@
                 // sensitivity: -10,
                 // forceToAxis: true,
                 // thresholdTime: 1000
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
             },
             onAny(eventName, ...args) {
                 console.log('Event: ', eventName);
@@ -372,14 +373,14 @@
                           scale:2,
                         }) */
                 },
-                // transitionEnd: function () {
-                //     if (this.realIndex === 4) {
-                //         console.log("oi");
-                //         this.mousewheel.disable()
-                //     }
+                transitionEnd: function () {
+                    if (this.realIndex === 4) {
+                        console.log("oi");
+                        this.mousewheel.disable()
+                    }
 
 
-                // },
+                },
 
                 snapIndexChange: function () {
                     let ativo = document.querySelector(".ativo .text")
@@ -441,10 +442,14 @@
             let Antes = array.slice('0', swiperTexto.realIndex + 1).reverse();
             let depois = array.slice(swiperTexto.realIndex);
 
+            let indexAtual = swiperTexto.realIndex
+
             let valorX = 100
             let = valorMobileItem1 = " -12vw"
 
             let = valorMobileItem4 = "7vw"
+
+            //redeclarar mobile
             const mobile = window.matchMedia('(max-width: 540px)').matches
             if (mobile) {
                 valorX = 40
@@ -460,8 +465,6 @@
 
                 })
             })
-
-
 
             depois.forEach((i, index) => {
 
@@ -480,19 +483,19 @@
             })
 
 
-            if (swiperTexto.realIndex === 0) {
+            if (indexAtual === 0) {
                 gsap.to(".titulo__trailer", {
                     x: valorMobileItem1,
                 })
 
 
-            } else if (swiperTexto.realIndex === 1) {
+            } else if (indexAtual === 1) {
                 gsap.to(".titulo__trailer", {
                     x: " -3vw",
                 })
 
 
-            } else if (swiperTexto.realIndex === 4) {
+            } else if (indexAtual === 4) {
                 gsap.to(".titulo__trailer", {
                     x: valorMobileItem4,
                 })

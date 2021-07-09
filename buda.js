@@ -706,7 +706,7 @@
                             }), C.headerLogo.current && z.a.fromTo(C.headerLogo.current, .4, {
                                 opacity: 0
                             }, {
-                                opacity: 1,
+                                opacity: 1,     
                                 ease: vC.a,
                                 delay: .35
                             }), C.infos && z.a.fromTo(C.infos, .7, {
