@@ -118,8 +118,9 @@ export function animaAoScroll() {
 }
 
 
-
-export function animacaoIntroEmpresas() {
+/* 
+export
+ function animacaoIntroEmpresas() {
     const smartphone = document.querySelector(".js-animate-smart")
     const comment1 = document.querySelector(".intro .comment-1")
     const comment2 = document.querySelector(".intro .comment-2")
@@ -174,91 +175,91 @@ export function animacaoIntroEmpresas() {
 
 
 
-}
+} */
 
-export
+// export
 
-function animacaoCirculo() {
-    gsap.registerPlugin(ScrollTrigger);
-    gsap.registerPlugin(CSSPlugin)
-    const elem = document.querySelector(".number")
-    const svg1 = document.querySelector(".number svg.svg-1 circle:nth-child(2)")
-    const svg2 = document.querySelector(".number svg.svg-2 circle:nth-child(2)")
-    const svg3 = document.querySelector(".number svg.svg-3 circle:nth-child(2)")
+// function animacaoCirculo() {
+//     gsap.registerPlugin(ScrollTrigger);
+//     gsap.registerPlugin(CSSPlugin)
+//     const elem = document.querySelector(".number")
+//     const svg1 = document.querySelector(".number svg.svg-1 circle:nth-child(2)")
+//     const svg2 = document.querySelector(".number svg.svg-2 circle:nth-child(2)")
+//     const svg3 = document.querySelector(".number svg.svg-3 circle:nth-child(2)")
 
-    ScrollTrigger.create({
-        trigger: elem,
-        // markers: true,
-        start: "top+=300px bottom",
-        once: true,
-        onEnter: function () {
+//     ScrollTrigger.create({
+//         trigger: elem,
+//         // markers: true,
+//         start: "top+=300px bottom",
+//         once: true,
+//         onEnter: function () {
 
-            gsap.to(svg1, 1, {
-                strokeDashoffset: -80,
-            })
-            let numero = document.querySelector(".item__1 h4 span")
-            var min = 2;
-            var max = 145;
-            var duracao = 1000; // 5 segundos
-            for (var i = min; i <= max; i++) {
-                setTimeout(function (nr) {
-                    numero.innerHTML = nr;
-                }, i * duracao / max, i);
-            }
+//             gsap.to(svg1, 1, {
+//                 strokeDashoffset: -80,
+//             })
+//             let numero = document.querySelector(".item__1 h4 span")
+//             var min = 2;
+//             var max = 145;
+//             var duracao = 1000; // 5 segundos
+//             for (var i = min; i <= max; i++) {
+//                 setTimeout(function (nr) {
+//                     numero.innerHTML = nr;
+//                 }, i * duracao / max, i);
+//             }
 
-            gsap.to(svg2, 1, {
-                strokeDashoffset: -80,
-            })
-            let numero2 = document.querySelector(".item__2 h4 span")
-            var min2 = 2;
-            var max2 = 254;
-            var duracao2 = 1000; // 5 segundos
-            for (var i = min2; i <= max2; i++) {
-                setTimeout(function (nr) {
-                    numero2.innerHTML = nr;
-                }, i * duracao2 / max2, i);
-            }
+//             gsap.to(svg2, 1, {
+//                 strokeDashoffset: -80,
+//             })
+//             let numero2 = document.querySelector(".item__2 h4 span")
+//             var min2 = 2;
+//             var max2 = 254;
+//             var duracao2 = 1000; // 5 segundos
+//             for (var i = min2; i <= max2; i++) {
+//                 setTimeout(function (nr) {
+//                     numero2.innerHTML = nr;
+//                 }, i * duracao2 / max2, i);
+//             }
 
-            gsap.to(svg3, 1, {
-                strokeDashoffset: -80,
-            })
-            let numero3 = document.querySelector(".item__3 h4 span")
-            var min3 = 2;
-            var max3 = 500;
-            var duracao3 = 1000; // 5 segundos
-            for (var i = min3; i <= max3; i++) {
-                setTimeout(function (nr) {
-                    numero3.innerHTML = nr;
-                }, i * duracao3 / max3, i);
-            }
-
-
-        },
+//             gsap.to(svg3, 1, {
+//                 strokeDashoffset: -80,
+//             })
+//             let numero3 = document.querySelector(".item__3 h4 span")
+//             var min3 = 2;
+//             var max3 = 500;
+//             var duracao3 = 1000; // 5 segundos
+//             for (var i = min3; i <= max3; i++) {
+//                 setTimeout(function (nr) {
+//                     numero3.innerHTML = nr;
+//                 }, i * duracao3 / max3, i);
+//             }
 
 
+//         },
 
-    });
 
 
-}
-export function animaContato() {
-    const tl = new TimelineMax({
-        paused: false,
-    });
-    gsap.set(".contato__wrapper", {
-        opacity: 0,
-        y: 200,
-    })
+//     });
 
-    gsap.set(".contato h1", {
-        x: "100%",
-    })
-    tl
-        .to(".contato__wrapper", 1.2, {
-            opacity: 1,
-            y: 0,
-        })
-        .to(".contato h1", .8, {
-            x: 0,
-        }, "-=.6")
-}
+
+// }
+// export function animaContato() {
+//     const tl = new TimelineMax({
+//         paused: false,
+//     });
+//     gsap.set(".contato__wrapper", {
+//         opacity: 0,
+//         y: 200,
+//     })
+
+//     gsap.set(".contato h1", {
+//         x: "100%",
+//     })
+//     tl
+//         .to(".contato__wrapper", 1.2, {
+//             opacity: 1,
+//             y: 0,
+//         })
+//         .to(".contato h1", .8, {
+//             x: 0,
+//         }, "-=.6")
+// }
