@@ -1,12 +1,248 @@
 .menus {
+    position: absolute;
+    top: 40px;
     display: flex;
     justify-content: space-between;
+    width: 100%;
     align-items: center;
     padding: 0 40px;
+    max-width: 1800px;
+    @include center;
+    z-index: 20;
+
+    @include d(s) {
+        top: 30px;
+        padding: 0 15px;
+    }
 
     .logo img {
+        object-fit: contain;
+
         @include d(m) {
             width: 140px;
         }
     }
+
+}
+
+.menu__nav {
+    width: 60px;
+    height: 60px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+
+    transition: .5s ease;
+}
+
+.menu__btn {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    cursor: pointer;
+    background: transparent;
+    border: initial;
+
+    span {
+        border-radius: 10px;
+        overflow: hidden;
+        transition: .3s ease;
+
+        &:nth-child(1) {
+            display: block;
+            background: white;
+            position: absolute;
+            height: 2px;
+            width: 20px;
+            top: 10px;
+            right: 0;
+        }
+
+        &:nth-child(2) {
+            display: block;
+            background: white;
+            position: absolute;
+            height: 2px;
+            width: 40px;
+            top: 20px;
+            right: 0;
+        }
+
+        &:nth-child(3) {
+            display: block;
+            background: white;
+            position: absolute;
+            height: 2px;
+            width: 20px;
+            top: 30px;
+            left: 0;
+            transition: initial !important;
+
+        }
+    }
+}
+
+
+.menu__open {
+    .menu__nav {
+        background: #262223;
+
+    }
+
+    .menu__links {
+        clip-path: circle(200% at 100% 0%) !important;
+        opacity: 1;
+    }
+
+    .menu__btn {
+
+
+        span {
+
+
+
+            &:nth-child(1) {
+                transform: rotate(45deg);
+                width: 40px;
+                top: 20px;
+
+            }
+
+            &:nth-child(2) {
+                transform: rotate(-45deg);
+                width: 40px;
+            }
+
+            &:nth-child(3) {
+                opacity: 0;
+            }
+        }
+    }
+}
+
+.menu__open {
+    overflow: hidden;
+}
+
+.html__menu-open {
+    overflow: hidden;
+}
+
+.menu__links {
+    position: fixed;
+    clip-path: circle(2.5% at 94.5% 10%) !important;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    background: #f3f3f3;
+    width: 100%;
+    height: 100vh;
+    padding: 20px;
+    padding-top: 140px;
+    z-index: 10;
+    overflow: hidden;
+    transition: opacity .1s ease, clip-path .6s ease-out;
+
+    @include d(m) {
+        overflow: auto;
+
+    }
+
+    &-wrapper {
+        display: flex;
+
+        @include d(m) {
+            flex-direction: column-reverse;
+        }
+    }
+
+    .dados {
+        display: flex;
+        flex-direction: column;
+
+        li {
+            h3 {
+                font-weight: 500;
+                font-size: 24px;
+                line-height: 140%;
+                color: #7E818C !important;
+                margin-top: 20px;
+                margin-bottom: 10px;
+
+                @include d(s) {
+                    font-size: 18px;
+                    margin-top: 10px;
+                }
+            }
+
+            a {
+                font-size: 22px;
+                line-height: 140%;
+                color: #262223;
+                display: inline-block;
+                margin-bottom: 10px;
+
+                @include d(s) {
+                    font-size: 1rem;
+                }
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    .linkis {
+        display: flex;
+        flex-direction: column;
+        margin-left: 50px;
+
+        @include d(s) {
+            margin-left: 10px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+
+        }
+
+        a {
+            font-weight: 900;
+            // font-size: 72px;
+            @include clamp("font-size", 32px, 5vw, 72px);
+            display: inline-block;
+            margin-bottom: 50px;
+
+            &:hover {
+                color: $cor-vermelho-1;
+            }
+
+            @include d(s) {
+                margin-bottom: 15px;
+
+                &:last-child {
+                    margin-bottom: 10px;
+                }
+
+            }
+
+
+        }
+
+    }
+
+    .sociais {
+        display: grid;
+        grid-template-columns: repeat(3, max-content);
+        gap: 20px;
+        margin-top: 5px;
+
+        a {
+            transition: .3s ease;
+
+            &:hover {
+                transform: scale(1.3);
+            }
+        }
+    }
+
 }

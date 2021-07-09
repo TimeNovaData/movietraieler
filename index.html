@@ -27,6 +27,18 @@
 
     <main id="page__home">
 
+        <div class="menus">
+            <div class="logo">
+                <a href="#"><img src="assets/img/logo.png"></a>
+            </div>
+            <div class="menu__nav">
+                <button class="menu__btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
 
         <section class="carousel">
 
@@ -58,11 +70,11 @@
 
 
                     </div>
-                    <div class="swiper-pagination"></div>
+
 
                 </div>
             </div>
-
+            <div id="pag" class="swiper-pagination"></div>
 
             <div class="titulo">
                 <div class="titulo__container">
@@ -288,6 +300,55 @@
 
     </main>
 
+    <nav class="menu__links">
+        <div class="container">
+            <div class="menu__links-wrapper">
+
+
+                <div class="col-lg-4">
+                    <ul class="dados">
+                        <li>
+                            <h3>Contate-nos</h3>
+                        </li>
+                        <li><a target="_blank"
+                                href="mailto:movietrailer@movietrailer.com.br">movietrailer@movietrailer.com.br</a></li>
+                        <li>
+                            <a href="tel:+55 (21) 9 8989-9898">+55 (21) 9 8989-9898</a>
+                        </li>
+                        <li>
+                            <h3>Onde estamos?</h3>
+                        </li>
+                        <li><a href="#">Avenida das Américas 1251, Rio de Janeiro</a></li>
+                        <li>
+                            <h3>Siga a gente</h3>
+                        </li>
+                        <li class="sociais">
+
+                            <a href="#"><img src="assets/img/facebook.svg" alt="facebook"></a>
+                            <a href="#"><img src="assets/img/instagram.svg" alt="instagram"></a>
+                            <a href="#"><img src="assets/img/vevo.svg" alt="vevo"></a>
+
+                        </li>
+                    </ul>
+
+                </div>
+
+                <div class="col-lg-8">
+                    <ul class="linkis ">
+                        <li> <a href="#">Home</a></li>
+                        <li> <a href="#">Trabalhos</a></li>
+                        <li> <a href="#">A Movietrailer</a></li>
+                    </ul>
+
+                </div>
+
+
+
+            </div>
+        </div>
+
+    </nav>
+
 
     <!-- swiper -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
@@ -317,6 +378,19 @@
 
 
     <script>
+        let valorX = 100
+        let valorMobileItem1 = " -12vw"
+        let mouseVar = true
+        let valorMobileItem4 = "7vw"
+
+        //redeclarar mobile
+        const mobile = window.matchMedia('(max-width: 540px)').matches
+        if (mobile) {
+            valorX = 40
+            valorMobileItem4 = "9vw"
+            valorMobileItem1 = " -20vw"
+            mouseVar = false
+        }
         //imagnes
         const swiperImagens = new Swiper(".swiper-intro", {
             effect: "fade",
@@ -324,7 +398,7 @@
             spaceBetween: 0,
             centeredSlides: false,
             preloadImages: true,
-           
+
 
 
         })
@@ -333,7 +407,7 @@
             paused: true,
         })
         tlLetra
-
+        const pagination = document.querySelector("#pag")
         /* texto */
         const swiperTexto = new Swiper(".titulo__container", {
 
@@ -341,10 +415,9 @@
             spaceBetween: 10,
             centeredSlides: true,
             direction: "vertical",
-            grabCursor: true,
+            // grabCursor: true,
             speed: 600,
             initialSlide: 2,
-            // mousewheelControl: true,
             preloadImages: true,
             mousewheel: {
                 eventsTarget: ".carousel",
@@ -354,8 +427,10 @@
                 // forceToAxis: true,
                 // thresholdTime: 1000
             },
+            mousewheel: mouseVar,
+
             pagination: {
-                el: ".swiper-pagination",
+                el: pagination,
                 clickable: true,
             },
             onAny(eventName, ...args) {
@@ -444,18 +519,7 @@
 
             let indexAtual = swiperTexto.realIndex
 
-            let valorX = 100
-            let = valorMobileItem1 = " -12vw"
 
-            let = valorMobileItem4 = "7vw"
-
-            //redeclarar mobile
-            const mobile = window.matchMedia('(max-width: 540px)').matches
-            if (mobile) {
-                valorX = 40
-                valorMobileItem4 = "9vw"
-                valorMobileItem1 = " -20vw"
-            }
 
             Antes.forEach((i, index) => {
                 gsap.to(i, {

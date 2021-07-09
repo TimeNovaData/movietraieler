@@ -90,6 +90,7 @@
     box-shadow: 0px 12px 24px rgba(236, 21, 21, 0.12);
     border-radius: 16px;
 
+
     @include d(s) {
       flex-direction: column;
       justify-content: flex-start;
@@ -150,6 +151,64 @@
   overflow: hidden;
   position: relative;
 
+  @include d(s) {
+    height: 75vh;
+    min-height: 550px;
+
+  }
+
+  .swiper-pagination {
+    z-index: 10;
+    left: initial;
+    right: -20px;
+    margin: initial;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    height: max-content;
+    width: max-content;
+    transform: rotate(90deg);
+    cursor: pointer;
+    padding: 2px;
+    background: transparent;
+
+    @include d(s) {
+      right: -50px;
+
+    }
+
+    .swiper-pagination-bullet {
+      @include size(10px);
+      background: white;
+      opacity: 1;
+      transition: .3s ease;
+      transition-property: width, opacity, border-radius;
+      transform-origin: bottom top;
+      overflow: hidden;
+
+      @include d(s) {
+        @include size(5px);
+        display: none;
+      }
+    }
+
+    .swiper-pagination-bullet+.swiper-pagination-bullet {
+      margin-left: 15px;
+
+    }
+
+    .swiper-pagination-bullet-active {
+      width: 35px;
+      border-radius: 10px;
+      background: $cor-vermelho-1;
+
+      @include d(s) {
+        width: 25px;
+      }
+
+    }
+  }
+
   //imagens
   .carousel__imagens {
     position: absolute;
@@ -161,6 +220,8 @@
       @include size(100%);
       filter: brightness(.7);
     }
+
+
   }
 
   .swiper-intro {
@@ -197,6 +258,8 @@
       height: 140px;
       display: flex;
       align-items: center;
+      cursor: grab;
+      width: max-content;
 
       @include d(m) {
         height: 100px;
@@ -204,7 +267,7 @@
       }
 
       @include d(s) {
-        height: 80px;
+        height: 54px;
 
       }
 
@@ -257,6 +320,8 @@
       .outline {
         -webkit-text-stroke: 2px rgba(255, 255, 255, 0.4);
         color: transparent;
+        position: relative;
+        // top: 1px;
 
         @include d(s) {
           -webkit-text-stroke: 1px rgba(255, 255, 255, 0.4);

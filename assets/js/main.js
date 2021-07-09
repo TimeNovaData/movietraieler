@@ -26,6 +26,7 @@ animacao.animaAoScroll()
 const pageHome = new Dom().el("#page__home");
 const pageTrabalhos = new Dom().el("#page__trabalhos");
 const pageSobre = new Dom().el("#page__sobre");
+const pageFiltro = new Dom().el("#page__filtro");
 
 if (pageHome) { // ★ HOME  
     new Dom().bodyClass("body__home");
@@ -41,6 +42,9 @@ if (pageHome) { // ★ HOME
     const swiperIntro = new Swiper(".equipe__container", config.propsServicos)
     swiperIntro.navigation.update()
     // animation.animationSobre()
+} else if (pageFiltro) {
+    new Dom().bodyClass("body__filtro");
+
 }
 
 
@@ -49,3 +53,17 @@ if (pageHome) { // ★ HOME
 //}
 
 document.addEventListener("DOMContentLoaded", () => document.body.classList.add("dcl"));
+
+
+const botaoMenu = document.querySelector(".menu__btn")
+
+botaoMenu.addEventListener("click", () => {
+    document.body.classList.toggle("menu__open")
+    document.documentElement.classList.toggle("html__menu-open")
+
+    // gsap.from(".menu__open .menu__btn", {
+    //     scale: 1.3,
+    //     duration:1,
+    // })
+
+})
