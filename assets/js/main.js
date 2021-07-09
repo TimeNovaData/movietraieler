@@ -39,7 +39,7 @@ if (pageHome) { // ★ HOME
     new Dom().bodyClass("body__sobre");
     const swiperIntro = new Swiper(".equipe__container", config.propsServicos)
     swiperIntro.navigation.update()
-    animation.animationSobre()
+    // animation.animationSobre()
 }
 
 

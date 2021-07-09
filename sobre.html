@@ -27,6 +27,7 @@
 
     <main id="page__sobre">
 
+<!-- https://www.one-tab.com/page/5J5DQJWARKS2oIoX5fGjbg -->
 
         <header class="intro__content">
             <img class="img__intro" src="assets/img/bg-sobre.jpg" alt="intro">
@@ -48,6 +49,9 @@
 
             </div>
         </header>
+
+
+
         <section class="sobre">
             <div class="container">
                 <div class="sobre__text">
@@ -208,6 +212,7 @@
 
 
         </div>
+        <div class="circle">Hover me</div>
 
 
         <footer>
@@ -251,16 +256,15 @@
 
 
 
-
     </main>
 
 
 
     <!-- jquery -->
 
-    <!--  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
         integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!-- scrollTrigger -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/ScrollTrigger.min.js"
@@ -282,6 +286,151 @@
         integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous">
     </script>
 
+    <script>
+        function animationSobre() {
+            const imgIntro = document.querySelector(".img__intro")
+            const h1Intro = document.querySelector(".intro__text h1")
+            const spanIntro = document.querySelector(".intro__text span")
+
+            const tl = gsap.timeline({
+                paused: true,
+            })
+
+            gsap.set([h1Intro, spanIntro], {
+                y: 300,
+                skewY: 3,
+                // skewX: -1,
+                autoAlpha: 0,
+                // rotateX: -200,
+                transformOrigin: "top left"
+            })
+
+            tl
+                .to([spanIntro, h1Intro], 1.5, {
+                    y: '0%',
+                    skewY: 0,
+                    skewX: 0,
+                    autoAlpha: 1,
+                    rotateX: 0,
+
+                    ease: Circ.easeOut,
+                    stagger: .3,
+                    rotateX: 0,
+                    onComplete: () => {
+                        [spanIntro, h1Intro].forEach(i => i.classList.add("animou"))
+                    },
+
+
+                })
+
+
+            window.addEventListener("load", event => {
+                let isLoaded = imgIntro.complete && imgIntro.naturalHeight !== 0;
+                if (isLoaded)
+                    tl.play()
+
+            });
+
+            //scroll
+            const tl2 = gsap.timeline({
+                paused: true,
+                smoothChildTiming: true,
+            })
+
+            // tl2
+
+            gsap.to(imgIntro, {
+                scale: 2,
+                y: -100,
+                duration: 20,
+                ease: "linear",
+                yoyo: true,
+                repeat: -1
+            })
+            // ScrollTrigger.create({
+            //     trigger: imgIntro,
+            //     once: false,
+            //     start: "100px center", // [trigger] [scroller] positions
+            //     end: "20px 80%",
+            //     scrub: 1,
+            //     snap: 1 / 100,
+            //     markers: true,
+            //     once: false,
+            //     // markers: true,
+            //     toggleActions: "play pause resume reset",
+            //     onEnter: function () {
+
+            //     },
+            //     /*   onScrubComplete: function(){
+            //           console.log("terminou");
+            //       },
+            //       onLeave: function(){
+            //           console.log("saiu");
+            //       },
+            //       toggleClass: "TESTE", */
+            //     // onEnterBack: function () {
+            //     //     animateFrom(elem, -1)
+            //     // },
+            //     // onLeave: function () {
+            //     //     hide(elem)
+            //     // } // assure that the element is hidden when scrolled into view
+            // });
+
+        }
+        animationSobre()
+
+
+        //button magnetic
+
+        // $(document).ready(function () {
+        //     $('.circle').wrap('<div class="container__button">');
+
+        //     $('body').on('mouseenter', '.container__button', function (e) {
+        //         gsap.to(this, {
+        //             duration: 0.3,
+        //             height: 200,
+        //             width: 200
+        //         });
+        //         gsap.to($(this).find('.circle'), {
+        //             duration: 0.3,
+        //             scale: 1.3
+        //         });
+        //     });
+
+        //     $('.container__button').mouseleave(function (e) {
+        //         gsap.to(this, {
+        //             duration: 0.3,
+        //             height: 150,
+        //             width: 150
+        //         });
+        //         gsap.to($(this).find('.circle'), {
+        //             duration: 0.3,
+        //             scale: 1,
+        //             x: 0,
+        //             y: 0
+        //         });
+        //     });
+
+        //     $('.container__button').mousemove(function (e) {
+        //         parallaxIt(e, 30);
+        //     });
+
+
+        // });
+
+        // function parallaxIt(e, movement) {
+        //     var $this = $(e.target);
+        //     var relX = e.pageX - $this.offset().left;
+        //     var relY = e.pageY - $this.offset().top;
+
+        //     gsap.to($this.find('.circle'), {
+        //         duration: 0.3,
+        //         x: (relX - $this.width() / 2) / $this.width() * movement,
+        //         y: (relY - $this.height() / 2) / $this.height() * movement,
+        //         ease: Power2.easeOut
+        //     });
+        // }
+    </script>
 </body>
 
 </html>

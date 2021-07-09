@@ -50,6 +50,13 @@
 }
 
 
+@mixin img_cover_absolute {
+  @include size(100%); //100% tamanho
+  @include inset; //centraliza
+  position: absolute;
+  object-fit: cover;
+}
+
 
 
 
