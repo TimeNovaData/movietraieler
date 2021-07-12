@@ -1,5 +1,4 @@
 // // import vemBootstrap from './modules/botstrapimport.js';
-import * as animacao from './modules/animation.js';
 // // import * as carouselClick from './modules/carousel-change.js';
 // // import lineClamp from './modules/line-clamp.js'; //line Clamp
 // // import * as darkMode from './modules/dark-mode.js'; //line Clamp
@@ -9,20 +8,23 @@ import * as animacao from './modules/animation.js';
 // import mudaDeAcordoComCarouselAtivo from "./modules/carousel-ativo.js"
 // import swiper from "./modules/swiperTrabalho.js"
 // import menu from './modules/menu.js'; //js do menu
-
-import * as config from './modules/swiper__props.js'; //Configs do Swiper
-import * as animation from './modules/animation-movie.js'; //Configs do Swiper
 import Dom from './modules/constructors.js'; //selecionar elementos
 
+import * as animacao from './modules/animation.js';
+import * as config from './modules/swiper__props.js'; //Configs do Swiper
+import * as animation from './modules/animation-movie.js'; //Configs do Swiper
 
-// let mediaQuery = window.matchMedia('(min-width: 1024px)').matches
-// if (mediaQuery) {
-//     // animacao.animaAoScroll()
-// }
 
+// > funções gerais
 animacao.animaAoScroll()
 
-// PAGES 
+// > mobile
+// let mediaQuery = window.matchMedia('(min-width: 1024px)').matches
+// if (mediaQuery) {
+// animacao.animaAoScroll()
+// }
+
+//> PAGES 
 const pageHome = new Dom().el("#page__home");
 const pageTrabalhos = new Dom().el("#page__trabalhos");
 const pageSobre = new Dom().el("#page__sobre");

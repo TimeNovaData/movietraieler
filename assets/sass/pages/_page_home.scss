@@ -150,6 +150,7 @@
   min-height: 620px;
   overflow: hidden;
   position: relative;
+  user-select: none;
 
   @include d(s) {
     height: 75vh;
@@ -181,7 +182,7 @@
       @include size(10px);
       background: white;
       opacity: 1;
-      transition: .3s ease;
+      transition: .2s linear;
       transition-property: width, opacity, border-radius;
       transform-origin: bottom top;
       overflow: hidden;
@@ -214,6 +215,10 @@
     position: absolute;
     @include size(100%);
     z-index: -1;
+
+    .swiper-slide {
+      // opacity: 1 !important;
+    }
 
     img {
       object-fit: cover;
